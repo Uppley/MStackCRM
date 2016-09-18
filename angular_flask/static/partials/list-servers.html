@@ -1,0 +1,61 @@
+<div class="header-section">
+	<div class="row header-row">
+		<div class="span12 masthead">
+			<h1 class="heading">List of Servers</h1>
+		</div>
+	</div>
+</div>
+<div class="header-push">
+</div>
+
+<div>
+	<!-- List of servers will go here -->
+	<!-- <h3><a href="/blog">Check out my blog</a></h3>
+  <h4>I have more than a blog. <a href="/blog">Click Here (Psych)</a></h4> -->
+
+
+	<table st-table="servers" class="table table-striped">
+		<thead>
+			<tr>
+				<th st-sort="name">Name</th>
+				<th st-sort="company_name">Company Name</th>
+				<th st-sort="doid">Server Id</th>
+				<th st-sort="ip">Ip Address</th>
+				<th st-sort="active">Active</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="server in servers">
+				<td>{{server.name}}</td>
+				<td>{{server.company_name}}</td>
+				<td>{{server.doid}}</td>
+				<td>{{server.ip}}</td>
+				<td>{{server.active}}</td>
+				<td>
+					<button type="button" ng-click="removeServer(server.id)" class="col-sm-2 btn btn-sm btn-danger">
+						<i class="fa fa-times-circle-o">
+					</i>
+					</button>
+				</td>
+			</tr>
+			<tr ng-show="showAddField">
+				<td>
+					<input type="text" placeholder="First and Last Name" ng-model="addName">
+				</td>
+				<td>
+					<input type="text" placeholder="Company Name" ng-model="addCompanyName">
+				</td>
+				<td>
+					<button type="button" ng-click="addServer()" class="col-sm-2 btn btn-sm btn-success">
+						<i class="fa fa-plus">
+					</i>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<button type="button" ng-click="changeField()" class="btn btn-sm btn-success">
+		<i class="fa fa-plus">
+	</i> Add Server
+	</button>
+</div>

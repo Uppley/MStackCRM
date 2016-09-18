@@ -1,0 +1,79 @@
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Create a New Project</h3>
+    </div>
+    <div class="modal-body">
+        <input type="text" class="input-block-level" placeholder="Product Name" ng-model="product.name">
+        <input type="text" class="input-block-level" placeholder="Product Description" ng-model="product.description">
+        <input type="number" class="input-block-level" placeholder="Product Estimate Hours" ng-model="product.estimate_hours">
+        <select class="input-block-level" ng-model="product.type">
+            <option selected disabled>Choose here</option>
+            <option value="Product Type 1">Product 1</option>
+            <option value="Product Type 2">Product 2</option>
+        </select>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="newProductType.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Create a New Project Type</h3>
+    </div>
+    <div class="modal-body">
+        <input type="text" class="input-block-level" placeholder="Product Name" ng-model="product.name">
+        <input type="text" class="input-block-level" placeholder="Product Description" ng-model="product.description">
+        <input type="number" class="input-block-level" placeholder="Product Estimate Hours" ng-model="product.estimate_hours">
+        <select class="input-block-level" ng-model="product.type">
+            <option value="Product Type 1">Product 1</option>
+            <option value="Product Type 2">Product 2</option>
+        </select>
+        <!-- Will ask for more information depending on the product type -->
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="open()">Add Product</button>
+        </div>
+        <div class="col-md-12">
+            <table st-table="rowCollection" class="table table-striped" class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Progress</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in products" ng-click="open(row)" style="cursor:pointer;">
+                        <td>{{row.id}}</td>
+                        <td>{{row.name}}</td>
+                        <td>{{row.description}}</td>
+                        <td>{{row.hour_number}}/{{row.estimate_hours}}
+                            hours</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="col-md-12">
+            <button type="button" class="btn btn-success btn-lg btn-block" ng-click="openProduct()">Add Product Type (Incomplete)</button>
+        </div>
+    </div>
+</div>

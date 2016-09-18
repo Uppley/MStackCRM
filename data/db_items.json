@@ -1,1 +1,10 @@
-{ "post": [{"body": "Welcome to my blog. I will be putting up posts about various topics, so make sure to check back soon.", "title": "My First Blog Post"}, {"body": "It is day two of my blogging efforts, and a lot has changed since I last wrote. Well, not really...", "title": "My Second Blog Post"}] }
+{
+  "post": [
+    { "body": "Welcome to my blog. I will be putting up posts about various topics, so make sure to check back soon.", "title": "My First Blog Post"},
+    { "body": "It is day two of my blogging efforts, and a lot has changed since I last wrote. Well, not really...", "title": "My Second Blog Post"}
+  ],
+  "server": [
+    {"name": "Sample Name 1", "company_name": "Sample Company Name 1", "ip": "98.139.180.149", "doid": "12345678"},
+    {"name": "Sample Name 2", "company_name": "Sample Company Name 2", "ip": "98.139.173.148", "doid": "12345679"}
+  ]
+}

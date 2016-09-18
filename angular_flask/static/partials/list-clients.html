@@ -1,0 +1,66 @@
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Client Details -will change based on what button is cliecked-
+        </h3>
+    </div>
+    <div class="modal-body">
+        <label>First Name</label>
+        <input type="text" ng-model="client.first_name" class="input-block-level" placeholder="First Name">
+        <label>Middle Name</label>
+        <input type="text" ng-model="client.middle_name" class="input-block-level" placeholder="Middle Name">
+        <label>Last Name</label>
+        <input type="text" ng-model="client.last_name" class="input-block-level" placeholder="Last Name">
+        <label>E-Mail</label>
+        <input type="text" ng-model="client.email" class="input-block-level" placeholder="E-Mail">
+        <label>Phone Number</label>
+        <input type="text" ng-model="client.phone" class="input-block-level" placeholder="Phone Number">
+        <label>Number of Projects</label>
+        <input type="text" ng-model="client.num_of_projects" class="input-block-level" placeholder="Number Of Projects">
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="trainFace()">Train Face</button>
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Opens Modal Here -->
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="open()">Add Client</button>
+        </div>
+        <div class="col-md-12">
+            <table st-table="rowCollection" class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Client Name</th>
+                        <th>E-mail</th>
+                        <th>Phone</th>
+                        <th>Number of Projects</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Add an NG-Click to each row -->
+                    <tr ng-repeat="client in clients" ng-click="open(client)">
+                        <td>{{client.id}}</td>
+                        <td>{{client.first_name}}
+                            {{client.last_name}}</td>
+                        <td>{{client.email}}</td>
+                        <td>{{client.phone}}</td>
+                        <td>{{client.num_of_projects}}
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
