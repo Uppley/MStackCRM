@@ -77,13 +77,14 @@ def trainFace(client_id, **kwargs):
     # Create a UUID that we'll find the user information by.
     cf_id = str(uuid.uuid1())
     example = ThreadingExample(the_client, cf_id)
+    return {'message': 'Training the face data right now. I guess you can call it a facial'}
     # Save that inside of CF.create_person() instead of the name
     # cf_id used to get user information on the fly
     # Create an internal function that will run on background thread -- doing
         # Activate train data function
         # Get person_group_id and person_id
         # On complete save person_id and group_id for user
-        # Don't look for progress by activating clear function
+        # Check to see if clientId is added
     pass
 
 def login(**kwargs):

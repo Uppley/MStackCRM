@@ -1,6 +1,6 @@
-# AngularJS + Flask Boilerplate App
+# MStackCRM
 
-A template for building apps with an Angular frontend and a Flask / python backend.
+This is a CRM that aims to be the Wordpress of CRM tools. The end goal would be to better manage customers and get business technology operations going faster
 
 ### How to Get Started
 
@@ -16,6 +16,4 @@ A template for building apps with an Angular frontend and a Flask / python backe
 > python manage.py create_db && python manage.py seed_db --seedfile 'data/db_items.json'
 
 5. check out your blog
-> http://localhost:5000/blog
-
-6. if you like this project, give it a star :)
+> http://localhost:5000/
